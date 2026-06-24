@@ -1626,3 +1626,66 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+.toast-container{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+}
+
+.toast{
+    background:#fff;
+    width:320px;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    margin-top:10px;
+    transform:translateX(400px);
+    transition:.3s;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.toast.show{
+    transform:translateX(0);
+}
+
+.toast-icon{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#22c55e;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.toast-icon svg{
+    width:20px;
+    height:20px;
+    stroke:#fff;
+    stroke-width:3;
+}
+
+.toast-content{
+    flex:1;
+}
+
+.toast-title{
+    font-weight:700;
+    margin-bottom:3px;
+}
+
+.toast-message{
+    font-size:13px;
+    color:#666;
+}
+
+.toast-close{
+    cursor:pointer;
+    font-size:18px;
+    color:#999;
+}
