@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand - Leading B2B Ecommerce Portal</title>
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- HEADER SECTION -->
+  <header class="header-main">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="#" class="logo-container">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </div>
+        <span>Brand</span>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
+        <select class="category-select" id="searchCategory">
+          <option value="all">All category</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothes">Clothes & Wear</option>
+          <option value="home">Home & Outdoor</option>
+        </select>
+        <button class="search-btn" onclick="searchProducts()">Search</button>
+      </div>
+
+      <!-- Navigation Icons -->
+      <div class="header-nav">
+        <a href="#" class="nav-icon-link">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Profile</span>
+        </a>
+        <a href="#" class="nav-icon-link">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>Message</span>
+        </a>
+        <a href="#" class="nav-icon-link">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span>Orders</span>
+        </a>
+        <a href="#" class="nav-icon-link">
+          <svg viewBox="0 0 24 24">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadgeCount">3</span>
+          <span>My cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION SUB BAR -->
+  <nav class="nav-sub">
+    <div class="container nav-sub-container">
+      <div class="nav-sub-left">
+        <a href="#" class="menu-trigger" onclick="toggleMobileMenu(event)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span>All category</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="#">Hot offers</a>
+          <a href="#">Gift boxes</a>
+          <a href="#">Projects</a>
+          <a href="#">Menu item</a>
+          <a href="#" class="dropdown-link">
+            <span>Help</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-sub-right">
+        <a href="#" class="dropdown-link">
+          <span>English, USD</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <a href="#" class="dropdown-link">
+          <span>Ship to</span>
+          <!-- Simplified Germany Flag using inline SVG -->
+          <svg class="flag-icon" viewBox="0 0 3 2">
+            <rect width="3" height="2" fill="#000"/>
+            <rect width="3" height="1.33" fill="#D00"/>
+            <rect width="3" height="0.67" fill="#FFD000"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <!-- Left Category Sidebar -->
+      <aside class="hero-sidebar">
+        <a href="#" class="hero-sidebar-item active">Automobiles</a>
+        <a href="#" class="hero-sidebar-item">Clothes and wear</a>
+        <a href="#" class="hero-sidebar-item">Home interiors</a>
+        <a href="#" class="hero-sidebar-item">Computer and tech</a>
+        <a href="#" class="hero-sidebar-item">Tools, equipments</a>
+        <a href="#" class="hero-sidebar-item">Sports and outdoor</a>
+        <a href="#" class="hero-sidebar-item">Animal and pets</a>
+        <a href="#" class="hero-sidebar-item">Machinery tools</a>
+        <a href="#" class="hero-sidebar-item">More category</a>
+      </aside>
+
+      <!-- Center Banner -->
+      <div class="hero-banner">
+        <img src="./css/assets/assets/Image/backgrounds/Banner-board-800x420 2.png" alt="">
+        <!-- Styled Inline SVG Background for Premium Electronics Illustration -->
+        <div class="hero-banner-graphics">
+          <!-- <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+            <!-- Laptop Outline -->
+            <rect x="50" y="50" width="160" height="100" rx="4" fill="#505a69" />
+            <rect x="55" y="55" width="150" height="85" rx="2" fill="#e0f2f1" />
+            <!-- Laptop screen graphic -->
+            <path d="M60 130 L100 80 L140 110 L200 65 L200 130 Z" fill="#b2dfdb" opacity="0.7"/>
+            <rect x="30" y="150" width="200" height="8" rx="4" fill="#a1aab2" />
+            <rect x="110" y="150" width="40" height="3" fill="#e3e8ee" />
+            
+            <!-- Smartphone -->
+            <rect x="220" y="90" width="45" height="85" rx="6" fill="#1c1c1c" />
+            <rect x="223" y="95" width="39" height="72" rx="3" fill="#e8f5e9" />
+            <circle cx="242.5" cy="172" r="3" fill="#fff" opacity="0.5"/>
+            
+            <!-- Headphones -->
+            <path d="M120 70 C120 30 180 30 180 70" stroke="#ff9017" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <rect x="112" y="65" width="16" height="24" rx="4" fill="#ff9017" />
+            <rect x="172" y="65" width="16" height="24" rx="4" fill="#ff9017" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Right User & Offer cards -->
+      <div class="hero-right">
+        <!-- User card -->
+        <div class="user-card">
+          <div class="user-info">
+            <div class="user-avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <p>Hi, user<br>let's get started</p>
+          </div>
+          <button class="user-btn-join">Join now</button>
+          <button class="user-btn-login">Log in</button>
+        </div>
+        <!-- Promo discount card -->
+        <div class="promo-card">
+          Get US $10 off with a new supplier
+        </div>
+        <!-- Quote preferences card -->
+        <div class="supplier-card">
+          Send quotes with supplier preferences
+        </div>
+      </div>
+    </section>
+
+    <!-- DEALS AND OFFERS SECTION -->
+    <section class="deals-section">
+      <!-- Countdown timer block -->
+      <div class="deals-countdown-box">
+        <h3>Deals and offers</h3>
+        <p>Hygiene equipments</p>
+        <div class="countdown-container">
+          <div class="time-card">
+            <span class="number" id="timerDays">04</span>
+            <span class="label">Days</span>
+          </div>
+          <div class="time-card">
+            <span class="number" id="timerHours">13</span>
+            <span class="label">Hour</span>
+          </div>
+          <div class="time-card">
+            <span class="number" id="timerMinutes">34</span>
+            <span class="label">Min</span>
+          </div>
+          <div class="time-card">
+            <span class="number" id="timerSeconds">56</span>
+            <span class="label">Sec</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deal products grid -->
+      <div class="deals-grid">
+        <!-- Card 1 -->
+        <div class="deal-card">
+          <div class="deal-img-box">
+            <img src="images/watch.png" alt="Smart watches" class="product-img">
+          </div>
+          <h4>Smart watches</h4>
+          <span class="discount-badge">-25%</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="deal-card">
+          <div class="deal-img-box">
+            <img src="images/laptop.png" alt="Laptops" class="product-img">
+          </div>
+          <h4>Laptops</h4>
+          <span class="discount-badge">-15%</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="deal-card">
+          <div class="deal-img-box">
+            <img src="images/camera.png" alt="GoPro cameras" class="product-img">
+          </div>
+          <h4>GoPro cameras</h4>
+          <span class="discount-badge">-40%</span>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="deal-card">
+          <div class="deal-img-box">
+            <img src="images/headphones.png" alt="Headphones" class="product-img">
+          </div>
+          <h4>Headphones</h4>
+          <span class="discount-badge">-25%</span>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="deal-card">
+          <div class="deal-img-box">
+            <img src="images/camera.png" alt="Canon cameras" class="product-img">
+          </div>
+          <h4>Canon cameras</h4>
+          <span class="discount-badge">-25%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME AND OUTDOOR SECTION -->
+    <section class="category-block">
+      <!-- Left Banner -->
+      <div class="category-left-banner home-banner-bg">
+        <h3>Home and outdoor</h3>
+        <button class="btn-source">Source now</button>
+        <!-- Styled Category Illustration -->
+        <div class="category-banner-illustration">
+          <img src="images/chair.png" alt="Home and outdoor" class="product-img">
+        </div>
+      </div>
+
+      <!-- Right Products Grid -->
+      <div class="category-products-grid">
+        <!-- 1: Soft Chairs -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Soft chairs</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/chair.png" alt="Soft chairs" class="product-img">
+          </div>
+        </div>
+
+        <!-- 2: Sofa & Chair -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Sofa & chair</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/chair.png" alt="Sofa & chair" class="product-img">
+          </div>
+        </div>
+
+        <!-- 3: Kitchen dishes -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Kitchen dishes</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/kitchen.png" alt="Kitchen dishes" class="product-img">
+          </div>
+        </div>
+
+        <!-- 4: Smart watches (Clay pot image) -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Smart watches</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/kitchen.png" alt="Smart watches" class="product-img">
+          </div>
+        </div>
+
+        <!-- 5: Kitchen mixer -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Kitchen mixer</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/kitchen.png" alt="Kitchen mixer" class="product-img">
+          </div>
+        </div>
+
+        <!-- 6: Blenders -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Blenders</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/kitchen.png" alt="Blenders" class="product-img">
+          </div>
+        </div>
+
+        <!-- 7: Home appliance -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Home appliance</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/placeholder.png" alt="Home appliance" class="product-img">
+          </div>
+        </div>
+
+        <!-- 8: Coffee maker (Plant image) -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Coffee maker</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/placeholder.png" alt="Coffee maker" class="product-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSUMER ELECTRONICS SECTION -->
+    <section class="category-block">
+      <!-- Left Banner -->
+      <div class="category-left-banner elec-banner-bg">
+        <h3>Consumer electronics and gadgets</h3>
+        <button class="btn-source">Source now</button>
+        <!-- Styled Category Illustration -->
+        <div class="category-banner-illustration">
+          <img src="images/laptop.png" alt="Consumer electronics" class="product-img">
+        </div>
+      </div>
+
+      <!-- Right Products Grid -->
+      <div class="category-products-grid">
+        <!-- 1: Smart Watches -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Smart watches</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/watch.png" alt="Smart watches" class="product-img">
+          </div>
+        </div>
+
+        <!-- 2: Cameras -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Cameras</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/camera.png" alt="Cameras" class="product-img">
+          </div>
+        </div>
+
+        <!-- 3: Headphones -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Headphones</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/headphones.png" alt="Headphones" class="product-img">
+          </div>
+        </div>
+
+        <!-- 4: Smart watches (Kettle image) -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Smart watches</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/kitchen.png" alt="Smart watches" class="product-img">
+          </div>
+        </div>
+
+        <!-- 5: Gaming set -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Gaming set</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/headphones.png" alt="Gaming set" class="product-img">
+          </div>
+        </div>
+
+        <!-- 6: Laptops & PC -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Laptops & PC</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/laptop.png" alt="Laptops & PC" class="product-img">
+          </div>
+        </div>
+
+        <!-- 7: Smartphones -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Smartphones</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/placeholder.png" alt="Smartphones" class="product-img">
+          </div>
+        </div>
+
+        <!-- 8: Electric kettle -->
+        <div class="category-product-card">
+          <div class="cat-prod-info">
+            <h4>Electric kettle</h4>
+            <p>From USD 19</p>
+          </div>
+          <div class="cat-prod-img-box">
+            <img src="images/kitchen.png" alt="Electric kettle" class="product-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INQUIRY FORM SECTION -->
+    <section class="inquiry-section">
+      <!-- Left side Banner -->
+      <div class="inquiry-left">
+        <h2>An easy way to send requests to all suppliers</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+      </div>
+
+      <!-- Right side Inquiry Form -->
+      <div class="inquiry-card">
+        <h3>Send quote to suppliers</h3>
+        <form class="inquiry-form" onsubmit="sendInquiry(event)">
+          <div class="form-group">
+            <input type="text" id="inquiryItem" placeholder="What item you need?" required>
+          </div>
+          <div class="form-group">
+            <textarea id="inquiryDetails" rows="3" placeholder="Type more details"></textarea>
+          </div>
+          <div class="form-group form-row">
+            <input type="number" id="inquiryQty" placeholder="Quantity" min="1" required>
+            <select id="inquiryUnit">
+              <option value="pcs">Pcs</option>
+              <option value="liters">Liters</option>
+              <option value="kg">Kg</option>
+              <option value="boxes">Boxes</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-inquiry">Send inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- RECOMMENDED ITEMS SECTION -->
+    <section>
+      <h3 class="section-heading">Recommended items</h3>
+      <div class="recommended-grid" id="recommendedGrid">
+        <!-- Rendered Dynamically via JavaScript showProducts() -->
+      </div>
+    </section>
+
+    <!-- EXTRA SERVICES SECTION -->
+    <section>
+      <h3 class="section-heading">Our extra services</h3>
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-img-placeholder">
+            <!-- Warehouse SVG illustration -->
+            <svg viewBox="0 0 100 100">
+              <rect x="20" y="40" width="60" height="40" fill="#94a3b8"/>
+              <polygon points="15,40 50,15 85,40" fill="#475569"/>
+              <rect x="40" y="55" width="20" height="25" fill="#334155"/>
+            </svg>
+          </div>
+          <div class="service-icon-badge">
+            <!-- Search Icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h4>Source from Industry Hubs</h4>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-img-placeholder">
+            <!-- Box styling SVG -->
+            <svg viewBox="0 0 100 100">
+              <rect x="25" y="25" width="50" height="50" fill="#94a3b8" rx="4"/>
+              <path d="M25 50 H75 M50 25 V75" stroke="#cbd5e1" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="service-icon-badge">
+            <!-- Package/Layout Icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h4>Customize Your Products</h4>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-img-placeholder">
+            <!-- Sea/Ocean visual SVG -->
+            <svg viewBox="0 0 100 100">
+              <path d="M10 60 Q30 50 50 60 T90 60" fill="none" stroke="#475569" stroke-width="4"/>
+              <path d="M10 75 Q30 65 50 75 T90 75" fill="none" stroke="#475569" stroke-width="4"/>
+            </svg>
+          </div>
+          <div class="service-icon-badge">
+            <!-- Send/Plane Icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h4>Fast, reliable shipping by ocean or air</h4>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-img-placeholder">
+            <!-- Inspection visual SVG -->
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="30" fill="#94a3b8"/>
+              <circle cx="50" cy="50" r="20" fill="#cbd5e1"/>
+              <line x1="50" y1="30" x2="50" y2="70" stroke="#475569" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="service-icon-badge">
+            <!-- Shield/Security Icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h4>Product monitoring and inspection</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPLIERS BY REGION -->
+    <section>
+      <h3 class="section-heading">Suppliers by region</h3>
+      <div class="regions-grid">
+        <!-- Region 1: UAE -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 3 2">
+              <rect width="3" height="2" fill="#00732F"/>
+              <rect width="3" height="1.33" fill="#FFF"/>
+              <rect width="3" height="0.67" fill="#000"/>
+              <rect width="0.75" height="2" fill="#FF0000"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>Arabic Emirates</h4>
+            <p>shopname.ae</p>
+          </div>
+        </div>
+
+        <!-- Region 2: Australia -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 2 1">
+              <rect width="2" height="1" fill="#000033"/>
+              <!-- Simplified Union Jack and stars -->
+              <rect x="0" y="0" width="0.8" height="0.4" fill="#000033"/>
+              <path d="M0 0 L0.8 0.4 M0 0.4 L0.8 0" stroke="#fff" stroke-width="0.08"/>
+              <path d="M0 0 L0.8 0.4 M0 0.4 L0.8 0" stroke="#ff0000" stroke-width="0.04"/>
+              <line x1="0.4" y1="0" x2="0.4" y2="0.4" stroke="#fff" stroke-width="0.12"/>
+              <line x1="0" y1="0.2" x2="0.8" y2="0.2" stroke="#fff" stroke-width="0.12"/>
+              <line x1="0.4" y1="0" x2="0.4" y2="0.4" stroke="#ff0000" stroke-width="0.06"/>
+              <line x1="0" y1="0.2" x2="0.8" y2="0.2" stroke="#ff0000" stroke-width="0.06"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>Australia</h4>
+            <p>shopname.com.au</p>
+          </div>
+        </div>
+
+        <!-- Region 3: United States -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 1.9 1">
+              <rect width="1.9" height="1" fill="#fff"/>
+              <line x1="0" y1="0.07" x2="1.9" y2="0.07" stroke="#b22234" stroke-width="0.07"/>
+              <line x1="0" y1="0.21" x2="1.9" y2="0.21" stroke="#b22234" stroke-width="0.07"/>
+              <line x1="0" y1="0.35" x2="1.9" y2="0.35" stroke="#b22234" stroke-width="0.07"/>
+              <line x1="0" y1="0.49" x2="1.9" y2="0.49" stroke="#b22234" stroke-width="0.07"/>
+              <line x1="0" y1="0.63" x2="1.9" y2="0.63" stroke="#b22234" stroke-width="0.07"/>
+              <line x1="0" y1="0.77" x2="1.9" y2="0.77" stroke="#b22234" stroke-width="0.07"/>
+              <line x1="0" y1="0.91" x2="1.9" y2="0.91" stroke="#b22234" stroke-width="0.07"/>
+              <rect width="0.76" height="0.54" fill="#3c3b6e"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>United States</h4>
+            <p>shopname.co.us</p>
+          </div>
+        </div>
+
+        <!-- Region 4: Russia -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 3 2">
+              <rect width="3" height="2" fill="#d52b1e"/>
+              <rect width="3" height="1.33" fill="#0039a6"/>
+              <rect width="3" height="0.67" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>Russia</h4>
+            <p>shopname.ru</p>
+          </div>
+        </div>
+
+        <!-- Region 5: Italy -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 3 2">
+              <rect width="1" height="2" fill="#009246"/>
+              <rect x="1" width="1" height="2" fill="#f1f2f1"/>
+              <rect x="2" width="1" height="2" fill="#ce2b37"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>Italy</h4>
+            <p>shopname.it</p>
+          </div>
+        </div>
+
+        <!-- Region 6: Denmark -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 37 28">
+              <rect width="37" height="28" fill="#C8102E"/>
+              <rect x="12" width="4" height="28" fill="#FFF"/>
+              <rect y="12" width="37" height="4" fill="#FFF"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>Denmark</h4>
+            <p>shopname.dk</p>
+          </div>
+        </div>
+
+        <!-- Region 7: France -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 3 2">
+              <rect width="1" height="2" fill="#002395"/>
+              <rect x="1" width="1" height="2" fill="#FFF"/>
+              <rect x="2" width="1" height="2" fill="#ED2939"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>France</h4>
+            <p>shopname.co.fr</p>
+          </div>
+        </div>
+
+        <!-- Region 8: Saudi Arabia -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 3 2">
+              <rect width="3" height="2" fill="#006C35"/>
+              <!-- Simplified white sword details -->
+              <line x1="0.5" y1="1.3" x2="2.5" y2="1.3" stroke="#fff" stroke-width="0.1"/>
+              <text x="1.5" y="0.9" fill="#fff" font-size="0.3" text-anchor="middle" font-weight="bold">🇸🇦</text>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>Arabic Emirates</h4>
+            <p>shopname.ae</p>
+          </div>
+        </div>
+
+        <!-- Region 9: China -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 3 2">
+              <rect width="3" height="2" fill="#ee1c25"/>
+              <!-- Big yellow star -->
+              <polygon points="0.5,0.3 0.55,0.45 0.7,0.45 0.58,0.55 0.62,0.7 0.5,0.6 0.38,0.7 0.42,0.55 0.3,0.45 0.45,0.45" fill="#ffff00"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>China</h4>
+            <p>shopname.co.chn</p>
+          </div>
+        </div>
+
+        <!-- Region 10: Great Britain -->
+        <div class="region-item">
+          <div class="region-flag-container">
+            <svg viewBox="0 0 2 1">
+              <rect width="2" height="1" fill="#00247d"/>
+              <path d="M0 0 L2 1 M0 1 L2 0" stroke="#fff" stroke-width="0.2"/>
+              <path d="M0 0 L2 1 M0 1 L2 0" stroke="#cf142b" stroke-width="0.08"/>
+              <line x1="1" y1="0" x2="1" y2="1" stroke="#fff" stroke-width="0.3"/>
+              <line x1="0" y1="0.5" x2="2" y2="0.5" stroke="#fff" stroke-width="0.3"/>
+              <line x1="1" y1="0" x2="1" y2="1" stroke="#cf142b" stroke-width="0.18"/>
+              <line x1="0" y1="0.5" x2="2" y2="0.5" stroke="#cf142b" stroke-width="0.18"/>
+            </svg>
+          </div>
+          <div class="region-info">
+            <h4>Great Britain</h4>
+            <p>shopname.co.uk</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER SUBSCRIPTION SECTION -->
+    <section class="newsletter-banner">
+      <h3>Subscribe on our newsletter</h3>
+      <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); triggerToast('Subscription Successful!', 'You have subscribed to our newsletter.')">
+        <input type="email" class="newsletter-input" placeholder="Email" required>
+        <button type="submit" class="btn-subscribe">Subscribe</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer-main">
+    <div class="container footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="#" class="logo-container">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <span>Brand</span>
+        </a>
+        <p class="footer-brand-desc">
+          Best information about the company gles here but now lorem ipsum is
+        </p>
+        <!-- Socials -->
+        <div class="footer-socials">
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z M2 9h4v12H2z M4 6a2 2 0 1 1-2-2 2 2 0 0 1 2 2z"></path></svg>
+          </a>
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M17.5 6.5h.01"></path></svg>
+          </a>
+          <a href="#" class="social-circle">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z M9.75 15.02V8.48L15.45 11.75z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Col 1: About -->
+      <div class="footer-col">
+        <h4>About</h4>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Find store</a>
+          <a href="#">Categories</a>
+          <a href="#">Blogs</a>
+        </div>
+      </div>
+
+      <!-- Links Col 2: Partnership -->
+      <div class="footer-col">
+        <h4>Partnership</h4>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Find store</a>
+          <a href="#">Categories</a>
+          <a href="#">Blogs</a>
+        </div>
+      </div>
+
+      <!-- Links Col 3: Information -->
+      <div class="footer-col">
+        <h4>Information</h4>
+        <div class="footer-links">
+          <a href="#">Help Center</a>
+          <a href="#">Money Refund</a>
+          <a href="#">Shipping</a>
+          <a href="#">Contact us</a>
+        </div>
+      </div>
+
+      <!-- Links Col 4: For Users -->
+      <div class="footer-col">
+        <h4>For users</h4>
+        <div class="footer-links">
+          <a href="#">Login</a>
+          <a href="#">Register</a>
+          <a href="#">Settings</a>
+          <a href="#">My Orders</a>
+        </div>
+      </div>
+
+      <!-- Links Col 5: Get App -->
+      <div class="footer-col">
+        <h4>Get app</h4>
+        <div class="app-badges">
+          <a href="#" class="app-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.2.67-2.92 1.49-.62.71-1.16 1.85-1.01 2.96 1.12.09 2.25-.56 2.94-1.39z"/>
+            </svg>
+            <div class="app-badge-text">
+              <span class="subtitle">Download on the</span>
+              <span class="title">App Store</span>
+            </div>
+          </a>
+          <a href="#" class="app-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 5.27v13.46c0 .87.94 1.43 1.72.99l11.96-6.73c.73-.41.73-1.47 0-1.88L4.72 4.28c-.78-.44-1.72.12-1.72.99z"/>
+            </svg>
+            <div class="app-badge-text">
+              <span class="subtitle">Get it on</span>
+              <span class="title">Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright and lang dropdown -->
+    <div class="container footer-bottom">
+      <span>© 2023 Ecommerce.</span>
+      <div class="footer-lang-selector">
+        <!-- Simplified Flag Icon -->
+        <svg class="flag-icon" viewBox="0 0 3 2" style="margin-right: 4px;">
+          <rect width="3" height="2" fill="#B22234"/>
+          <rect width="3" height="1.33" fill="#FFF"/>
+          <rect width="3" height="0.67" fill="#3C3B6E"/>
+        </svg>
+        <span>English</span>
+        <!-- Dropdown arrow up -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC JAVASCRIPT EMBEDDED AT BOTTOM OF HTML -->
+  <script>
+    // 1. STATE & GLOBAL VARIABLES
+    let cartCount = 3; // Starting cart badge count as shown in the screenshot ("My cart (3)")
+
+    // Product items array representing the "Recommended Items" section
+    const products = [
+      {
+        id: 1,
+        price: 10.30,
+        title: "T-shirts with multiple colors, for men",
+        category: "clothes",
+        image: "images/placeholder.png"
+      },
+      {
+        id: 2,
+        price: 10.30,
+        title: "Jeans shorts for men blue color",
+        category: "clothes",
+        image: "images/placeholder.png"
+      },
+      {
+        id: 3,
+        price: 12.50,
+        title: "Brown winter coat medium size",
+        category: "clothes",
+        image: "images/placeholder.png"
+      },
+      {
+        id: 4,
+        price: 34.00,
+        title: "Jeans bag for travel for men",
+        category: "home",
+        image: "images/placeholder.png"
+      },
+      {
+        id: 5,
+        price: 99.00,
+        title: "Leather wallet",
+        category: "home",
+        image: "images/placeholder.png"
+      },
+      {
+        id: 6,
+        price: 9.99,
+        title: "Canon camera black, 100x zoom",
+        category: "electronics",
+        image: "images/camera.png"
+      },
+      {
+        id: 7,
+        price: 8.99,
+        title: "Headset for gaming with mic",
+        category: "electronics",
+        image: "images/headphones.png"
+      },
+      {
+        id: 8,
+        price: 10.30,
+        title: "Smart watch silver color modern",
+        category: "electronics",
+        image: "images/watch.png"
+      },
+      {
+        id: 9,
+        price: 10.30,
+        title: "Blue wallet for men leather material",
+        category: "home",
+        image: "images/placeholder.png"
+      },
+      {
+        id: 10,
+        price: 80.95,
+        title: "Jeans bag for travel for men",
+        category: "home",
+        image: "images/placeholder.png"
+      }
+    ];
+
+    // Initialize display of products on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      showProducts(products);
+      startCountdownTimer();
+    });
+
+    // 2. RENDERING FUNCTIONS
+    // Generates recommended item cards dynamically from products array
+    function showProducts(itemsList) {
+      const gridContainer = document.getElementById('recommendedGrid');
+      gridContainer.innerHTML = ''; // Clear existing contents
+
+      if (itemsList.length === 0) {
+        gridContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--secondary-color);">No products found matching your search.</div>';
+        return;
+      }
+
+      itemsList.forEach(product => {
+        // Create Recommended Card Container
+        const card = document.createElement('div');
+        card.className = 'recommended-card';
+
+        card.innerHTML = `
+          <div class="rec-img-box">
+            <img src="${product.image}" alt="${product.title}" class="product-img">
+          </div>
+          <span class="rec-price">$${product.price.toFixed(2)}</span>
+          <span class="rec-title" title="${product.title}">${product.title}</span>
+          <button class="btn-add-cart" onclick="addToCart(${product.id})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>Add to Cart</span>
+          </button>
+        `;
+        gridContainer.appendChild(card);
+      });
+    }
+
+    // 3. CART ACTIONS
+    // Increments the header cart badge and shows a toast success message
+    function addToCart(productId) {
+      // Find product details
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+
+      // Update state and UI
+      cartCount++;
+      document.getElementById('cartBadgeCount').textContent = cartCount;
+
+      // Trigger premium success toast message
+      triggerToast('Added to Cart!', `${product.title} was successfully added.`);
+    }
+
+    // 4. SEARCH FUNCTIONALITY
+    // Filters product list by search input and dropdown category selection
+    function searchProducts() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const category = document.getElementById('searchCategory').value;
+
+      const filtered = products.filter(product => {
+        const matchesQuery = product.title.toLowerCase().includes(query);
+        const matchesCategory = (category === 'all' || product.category === category);
+        return matchesQuery && matchesCategory;
+      });
+
+      showProducts(filtered);
+    }
+
+    // Allow search execution by pressing 'Enter' in search box
+    document.getElementById('searchInput').addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        searchProducts();
+      }
+    });
+
+    // 5. INQUIRY HANDLER
+    // Triggers a success notification when the inquiry request form is submitted
+    function sendInquiry(event) {
+      event.preventDefault();
+      
+      const item = document.getElementById('inquiryItem').value;
+      const qty = document.getElementById('inquiryQty').value;
+      const unit = document.getElementById('inquiryUnit').value;
+
+      triggerToast('Inquiry Sent!', `Your request for ${qty} ${unit} of "${item}" has been sent.`);
+      
+      // Reset form
+      event.target.reset();
+    }
+
+    // 6. COUNTDOWN TIMER IMPLEMENTATION
+    // Simulates a real-time countdown timer ticking down every second
+    function startCountdownTimer() {
+      let days = 4;
+      let hours = 13;
+      let minutes = 34;
+      let seconds = 56;
+
+      const daysEl = document.getElementById('timerDays');
+      const hoursEl = document.getElementById('timerHours');
+      const minutesEl = document.getElementById('timerMinutes');
+      const secondsEl = document.getElementById('timerSeconds');
+
+      const timerInterval = setInterval(() => {
+        seconds--;
+
+        if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+
+          if (minutes < 0) {
+            minutes = 59;
+            hours--;
+
+            if (hours < 0) {
+              hours = 23;
+              days--;
+
+              if (days < 0) {
+                // Reset or stop timer at zero
+                clearInterval(timerInterval);
+                days = 0; hours = 0; minutes = 0; seconds = 0;
+              }
+            }
+          }
+        }
+
+        // Format values with leading zero if less than 10
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }, 1000);
+    }
+
+    // 7. TOAST NOTIFICATION CREATION UTILITY
+    // Dynamically spawns a sleek toast element on the bottom-right of the page
+    function triggerToast(title, message) {
+      const toastContainer = document.getElementById('toastContainer');
+
+      // Create toast container element
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+
+      toast.innerHTML = `
+        <div class="toast-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <div class="toast-content">
+          <div class="toast-title">${title}</div>
+          <div class="toast-message">${message}</div>
+        </div>
+        <div class="toast-close">&times;</div>
+      `;
+
+      toastContainer.appendChild(toast);
+
+      // Trigger animation frame to slides toast in
+      setTimeout(() => {
+        toast.classList.add('show');
+      }, 50);
+
+      // Bind close button event
+      toast.querySelector('.toast-close').addEventListener('click', () => {
+        removeToast(toast);
+      });
+
+      // Auto close after 4 seconds
+      setTimeout(() => {
+        removeToast(toast);
+      }, 4000);
+    }
+
+    // Handles smooth toast removal
+    function removeToast(toast) {
+      toast.classList.remove('show');
+      // Wait for exit transition to complete before removing element
+      toast.addEventListener('transitionend', () => {
+        toast.remove();
+      });
+    }
+
+    // 8. MOBILE MENU TOGGLE HANDLER
+    function toggleMobileMenu(event) {
+      if (window.innerWidth <= 768) {
+        event.preventDefault();
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+      }
+    }
+  </script>
+</body>
+</html>
